@@ -1,0 +1,11 @@
+<?php $__env->startSection('content'); ?>
+<h1>All Country Codes</h1>
+<?php foreach($codes as $code): ?>
+	<li>
+	<?php echo link_to("/codes/{$code->codename}", $code->codename); ?>
+
+	</li>
+<?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

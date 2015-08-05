@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $__env->yieldContent('title'); ?></title>
+</head>
+<body>
+	<h1>This is written in master page</h1>
+	<h1><?php echo $__env->yieldContent('h1'); ?></h1>
+	<p><?php echo $__env->yieldContent('p'); ?></p>
+	<p>This paragraph came from master page</p>
+</body>
+</html>

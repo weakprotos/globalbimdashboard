@@ -1,0 +1,39 @@
+<?php $__env->startSection('script-front'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script-rear'); ?>
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script><?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('slimbimchart'); ?>
+	<section id="survey">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1 class="section-heading">slim BIM Survey</h1>
+					<hr class="primary">
+					<h4 class="section-heading">Choose a language.</h4>
+					<?php echo Form::open(array('url' => 'slimbimsurvey/create')); ?>
+
+					<div class="form-group">
+						<?php echo Form::select('language',array(''=>'Select Language', 'spanish'=>'Espanol','french'=>'Francais','russian'=>'русский','english'=>'English','chinese'=>'中文', 'arabic'=>'العربية','korean'=>'한국어'),Input::old('language'),array('class'=>'form-control')); ?> 
+					</div>
+					<?php echo Form::submit('Select Language',array('class'=>'btn btn-primary btn-lg btn-block')); ?>
+
+				</div>
+			</div>
+        	</div>
+	</section>	
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.slimbim', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,50 @@
+<?php $__env->startSection('script-front'); ?>
+	<!-- Bootstrap Core CSS -->
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	
+	<link href="bower_components/bootstrap/dist/css/creative.css" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('script-rear'); ?>
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('slimbimchart'); ?>
+<br>
+<br>
+<br>
+            <div class="row">
+                <div class="col-lg-2"></div>
+		<div class="col-lg-8">
+		    <?php if(Session::has('message')): ?>
+		    	<div class="alert alert-info"><?php echo Session::get('message'); ?></div>
+		    <?php endif; ?>
+		
+			<a href="<?php echo URL::to("slimbim"); ?>" class="btn btn-default btn-block">Go back to slimbim</a>
+                </div>
+            </div>
+            <!-- /.row -->
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.slimbim', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

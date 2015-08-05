@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eagles</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div lass="navbar-header">
+				<a class="navbar-band" href="<?php echo URL::to('eagles'); ?>">Eagle Alert </a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="<?php echo URL::to('eagles'); ?>">View All Eagles</a></li>
+				<li><a href="<?php echo URL::to('eagles/create'); ?>">Create a Ealge</a></li>
+			</ul>
+		</nav>
+
+<h1>Edit  <?php echo $eagle->name; ?> </h1>
+
+<!-- if there are will be used to show any message -->
+	
+	<?php echo HTML::ul($errors->all()); ?>
+
+	
+	<?php echo Form::model($eagle, array('route'=>array('eagles.update', $eagle->id), 'method' => 'PUT' )); ?> 
+		<div class='form-group'>
+			<?php echo Form::label('name', 'Name'); ?>
+
+			<?php echo Form::text('name',null, array('class'=>'form-control')); ?>
+
+		</div>
+		<div class='form-group'>
+			<?php echo Form::label('age', 'Age'); ?>
+
+			<?php echo Form::text('age',null, array('class'=>'form-control')); ?>
+
+		</div>
+		<?php echo Form::submit('Edit the Eagle!', array('class'=>'btn btn-primary')); ?>
+
+	<?php echo Form::close(); ?>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<?php $__env->startSection('title'); ?>
+About slim BIM Indexes | Global BIM Dashboard
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script-front'); ?>
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('script-rear'); ?>
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('page-wrapper'); ?>
+
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+		    <h1 class="page-header">slim BIM Indices</h1>
+		</div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+		<div class="col-lg-12">
+			<h1>Definition</h1>
+			<p>Indices for evaluating BIM adoption and implementation on a country level or on an industry level</p>
+			<h1>What are slim BIM indices?</h1>
+			<p>There are currently two sets of slim BIM indices developed. The first set uses four indices: level of adoption, depth of implementation, level of proficiency, and years using BIM.</p> 
+			
+			
+
+  
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Table 1. slim BIM Indices - Set 1
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Factor</th>
+                                            <th>Performance index</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Level of adoption</td>
+                                            <td>% of BIM users in the country or in the industry</td>
+                                        </tr>
+                                        <tr>
+					    <td>Depth of implementation </td>
+                                            <td>% of BIM users who use BIM in more than 60% of their projects (very heavy BIM users)</td>
+					</tr>
+					<tr>
+                                            <td>Level of proficiency</td>
+                                            <td>% of expert or advanced BIM users among BIM users in the country or in the industry</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Years using BIM</td>
+                                            <td>% of users who used BIM over five years among BIM users in the country or in the industry</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+		    <!-- /.panel -->
+		</div>
+		<!--/.col-lg-12 -->
+	</div>
+	<!-- row-->	
+<div class="row">
+	<div class="col-lg-6">
+	<div class="panel panel-default">
+                        <!-- /.panel-heading -->
+			<div class="panel-body">
+<img src="../images/diamond.png" class="img-responsive" alt="Cinque Terre">
+                        </div>
+			<!-- /.panel-body -->
+
+                        <div class="panel-footer">
+                            Figure 1. Comparison of the BIM adoption and implementation of three county levels
+                        </div>
+	
+                    </div>
+                    <!-- /.panel -->	
+	</div>
+	
+	<div class="col-lg-6">
+
+		<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Table 2. How to read the radar chart
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Diamond shape</th>
+                                            <th>Interpretation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tall (vertically long) diamond</td>
+                                            <td>The BIM adoption level is relatively low compared to the implementation depth.</td>
+                                        </tr>
+                                        <tr>
+					    <td>Flat (horizontally long) diamond</td>
+                                            <td>The BIM adoption level is relatively high, but the implementation depth is shallow.</td>
+					</tr>
+					<tr>
+                                            <td>Small fat diamond</td>
+                                            <td>Low adoption and implementation levels</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Large fat diamond</td>
+                                            <td>High adoption and implementation levels</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+	</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+		<h1>Further simplification</h1>
+		<p>Our recent studies showed that the level of BIM proficiency and the years using BIM strongly correlate with the level of BIM adoption and the level of BIM implementation. Based on this finding, the number of the slim BIM indices was further reduced to two as shown in Table 3:</p>
+
+		`
+		<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Table 3. slim BIM indices - Set 2
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Factor</th>
+                                            <th>Performance Index</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+					<tr>
+						<td>Level of adoption(Width)</td>
+						<td>% of BIM users in the country or in the industry</td>
+					<tr>		       
+					<tr>
+						<td>Depth of implementation(Height)</td>
+						<td>% of BIM users who use BIM on more than 60% of their projects(very heavy BIM users)</td>
+					<tr>
+				    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+</div>
+</div>
+<div class="row">
+<div class="col-lg-6">	
+
+	<div class="panel panel-default">
+                        <!-- /.panel-heading -->
+			<div class="panel-body">
+				<img src="../images/ball.png" class="img-responsive" alt="Cinque Terre">
+                        </div>
+			<!-- /.panel-body -->
+
+                        <div class="panel-footer">
+                            Figure 2. Comparison of the BIM adoption and implementation of three county levels
+                        </div>
+	
+                    </div>
+                    <!-- /.panel -->	
+</div>
+
+<div class="col-lg-6">
+
+		<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Table 4. How to interpret the ball shape
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Ball shape</th>
+                                            <th>Interpretation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tall ball</td>
+                                            <td>The BIM adoption level is relatively low compared to the implementation depth.</td>
+                                        </tr>
+                                        <tr>
+					    <td>Flat ball</td>
+                                            <td>The BIM adoption level is relatively high, but the implementation depth is shallow.</td>
+					</tr>
+					<tr>
+						<td>Fat ball</td>
+						<td>Balanced</td>
+					</tr>
+					<tr>
+                                            <td>Small ball</td>
+                                            <td>Low adoption and implementation levels</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Large ball</td>
+                                            <td>High adoption and implementation levels</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+</div>
+</div>
+
+<div class="row">
+<div class="col-lg-12">
+<h1>For more information:</h1>
+<p>For more information about the slim BIM indices, contact Ghang Lee at glee@yonsei.ac.kr</p>	
+
+		</div>
+	</div>
+</div>
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.sb-admin-2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,14 @@
+
+
+<?php $__env->startSection('title'); ?>
+Subpage1
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('h1'); ?>
+This is written in subpage1
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('p'); ?>
+This paragraph came from subpage1
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.geek-master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

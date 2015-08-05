@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Dogs List</title>
+</head>
+
+<body>
+	<h1>Dogs</h1>
+
+<?php foreach($dogs as $dog): ?>
+	<li>
+		<?php echo $dog->name; ?> (  <?php echo $dog->age; ?> ) is owned by <?php echo $dog->owner; ?>
+
+
+	</li>
+<?php endforeach; ?>
+
+
+</body>
+</html>
+

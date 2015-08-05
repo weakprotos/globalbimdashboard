@@ -1,0 +1,14 @@
+
+
+<?php $__env->startSection('title'); ?>
+	Page 2
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('h1'); ?>
+Heading for page 2
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('paragraph'); ?>
+This is page 2
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

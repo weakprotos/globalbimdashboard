@@ -1,0 +1,99 @@
+@extends('layouts.sb-admin-2')
+
+@section('title')
+Tables | Global BIM Dashboard
+@stop
+
+@section('script-front')
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+		google.load("visualization","1",{packages:["geochart"]});
+		google.setOnLoadCallback(drawRegionsMap);
+
+		function drawRegionsMap(){
+			var data = google.visualization.arrayToDataTable([
+				['Region Code','Continent','SLIM BIM INDEX'],
+				['002','Africa',0],
+				['150','Europe',31],
+				['019','Americas',50],
+				['142','Asia',17],
+				['009','Oceania',0]
+			]);
+
+			var options = {
+				resolution:'continents'
+			};
+
+			var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+			chart.draw(data,options);
+		}
+
+		window.addEventListener('resize', function () { 
+			   // "use strict";
+			   // window.location.reload();
+		//google.load("visualization","1",{packages:["geochart"]});
+		//google.setOnLoadCallback(drawRegionsMap);
+			//
+			drawRegionsMap(); 
+		});
+
+
+
+</script>
+
+
+
+@stop
+
+
+@section('script-rear')
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+
+
+
+@stop
+
+
+@section('page-wrapper')
+<div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+		    <h1 class="page-header">World Map of SLIM BIM Index</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+		<div class="col-lg-12">
+			<div id="regions_div" style="width: 100%"></div>
+		</div>
+	</div>
+</div>
+
+		
+
+@stop
+

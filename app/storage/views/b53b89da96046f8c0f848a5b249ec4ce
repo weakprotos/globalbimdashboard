@@ -1,0 +1,11 @@
+<html>
+<head>
+	<title><?php echo $__env->yieldContent('title'); ?></title>
+</head>
+<body>
+	<h1>Master Page Changed</h1>
+	<p>Paragraph (Master)</p>
+	<h1><?php echo $__env->yieldContent('h1'); ?></p>
+	<p><?php echo $__env->yieldContent('paragraph'); ?></p>
+</body>
+</html>

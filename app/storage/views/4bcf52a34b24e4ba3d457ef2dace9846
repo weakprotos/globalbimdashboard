@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eagles</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div lass="navbar-header">
+				<a class="navbar-band" href="<?php echo URL::to('eagles'); ?>">Eagle Alert </a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="<?php echo URL::to('eagles'); ?>">View All Eagles</a></li>
+				<li><a href="<?php echo URL::to('eagles/create'); ?>">Create a Ealge</a></li>
+			</ul>
+		</nav>
+
+<h1>Create a Eagle</h1>
+
+<!-- if there are will be used to show any message -->
+	<?php echo HTML::ul($errors->all()); ?>
+
+	<?php echo Form::open(array('url'=>'eagles')); ?>
+
+		<div class='form-group'>
+			<?php echo Form::label('name', 'Name'); ?>
+
+			<?php echo Form::text('name',Input::old('name'), array('class'=>'form-control')); ?>
+
+		</div>
+		<div class='form-group'>
+			<?php echo Form::label('age', 'Age'); ?>
+
+			<?php echo Form::text('age',Input::old('age'), array('class'=>'form-control')); ?>
+
+		</div>
+		<div class='form-group'>
+			<?php echo Form::submit('Create the Eagle!', array('class'=>'btn btn-primary')); ?>
+
+		</div>
+	<?php echo Form::close(); ?>
+
+</div>
+</body>
+</html>

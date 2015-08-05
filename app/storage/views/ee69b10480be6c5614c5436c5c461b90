@@ -1,0 +1,244 @@
+<?php $__env->startSection('script-front'); ?>
+<style>
+canvas {
+  width: 100%;
+  height: auto;
+}
+.chart {
+  width: 100%; 
+  height: auto;
+}
+</style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script-rear'); ?>
+	
+
+	 <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+<script src="bower_components/chartjs/Chart.js"></script>
+<script>
+	var radarOptions = {
+				
+	//Boolean - If we show the scale above the chart data			
+	scaleOverlay : false,
+	
+	//Boolean - If we want to override with a hard coded scale
+	scaleOverride : false,
+	
+	//** Required if scaleOverride is true **
+	//Number - The number of steps in a hard coded scale
+	scaleSteps : null,
+	//Number - The value jump in the hard coded scale
+	scaleStepWidth : null,
+	//Number - The centre starting value
+	scaleStartValue : null,
+	
+	//Boolean - Whether to show lines for each scale point
+	scaleShowLine : true,
+
+	//String - Colour of the scale line	
+	scaleLineColor : "#999",
+	
+	//Number - Pixel width of the scale line	
+	scaleLineWidth : 1,
+
+	//Boolean - Whether to show labels on the scale	
+	scaleShowLabels : false,
+	
+	//Interpolated JS string - can access value
+	
+	//String - Scale label font declaration for the scale label
+	scaleFontFamily : "'Arial'",
+	
+	//Number - Scale label font size in pixels	
+	scaleFontSize : 12,
+	
+	//String - Scale label font weight style	
+	scaleFontStyle : "normal",
+	
+	//String - Scale label font colour	
+	scaleFontColor : "#000",
+	
+	//Boolean - Show a backdrop to the scale label
+	scaleShowLabelBackdrop : true,
+	
+	//String - The colour of the label backdrop	
+	scaleBackdropColor : "rgba(255,255,255,1)",
+	
+	//Number - The backdrop padding above & below the label in pixels
+	scaleBackdropPaddingY : 2,
+	
+	//Number - The backdrop padding to the side of the label in pixels	
+	scaleBackdropPaddingX : 2,
+	
+	//Boolean - Whether we show the angle lines out of the radar
+	angleShowLineOut : true,
+	
+	//String - Colour of the angle line
+	angleLineColor : "rgba(255,255,255,0.3)",
+	
+	//Number - Pixel width of the angle line
+	angleLineWidth : 1,			
+	
+	//String - Point label font declaration
+	pointLabelFontFamily : "'Arial'",
+	
+	//String - Point label font weight
+	pointLabelFontStyle : "normal",
+	
+	//Number - Point label font size in pixels	
+	pointLabelFontSize : 12,
+	
+	//String - Point label font colour	
+	pointLabelFontColor : "#000000",
+	
+	//Boolean - Whether to show a dot for each point
+	pointDot : true,
+	
+	//Number - Radius of each point dot in pixels
+	pointDotRadius : 3,
+	
+	//Number - Pixel width of point dot stroke
+	pointDotStrokeWidth : 1,
+	
+	//Boolean - Whether to show a stroke for datasets
+	datasetStroke : true,
+	
+	//Number - Pixel width of dataset stroke
+	datasetStrokeWidth : 1,
+	
+	//Boolean - Whether to fill the dataset with a colour
+	datasetFill : true,
+	
+	//Boolean - Whether to animate the chart
+	animation : true,
+
+	//Number - Number of animation steps
+	animationSteps : 60,
+	
+	//String - Animation easing effect
+	animationEasing : "easeOutQuart",
+
+	//Function - Fires when the animation is complete
+	onAnimationComplete : null,
+	
+	tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>"
+	
+}
+// Radar Data
+var radarData = {
+	labels : ["Depth of implementation(%)","Years using BIM(%)","Level of proficiency(%)","Level of adoption(%)"],
+	datasets : [
+		{
+			label: "World Average(%)",
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			data : [<?php echo $data['depth']; ?>,<?php echo $data['years']; ?>,<?php echo $data['proficiency']; ?>,<?php echo $data['adoption']; ?>]
+		},
+		{
+			label: "100(%)",
+			fillColor : "rgba(151,187,205,0.1)",
+			strokeColor : "rgba(151,187,205,0.1)",
+			data : [100,100,100,100]
+		}
+	]
+}
+
+//Get the context of the Radar Chart canvas element we want to select
+var ctx = document.getElementById("canvas").getContext("2d");
+
+// Create the Radar Chart
+var myRadarChart = new Chart(ctx).Radar(radarData, radarOptions);
+
+</script>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('slimbimchart'); ?>
+	<section id="about">
+		<div class="container">
+		<!--<div class="header-content-inner">-->
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+             			<h1 class="section-heading">What are slim BIM charts?</h1>
+				<br>
+			</div>
+			<div class="col-lg-8 col-lg-offset-2">
+				<h4>Slim BIM charts are a visual and numeric method developed by the <a href="http://big.yonsei.ac.kr">building informatics group</a> at Yonsei University for representing the level of BIM adoption and implementation using the four most commonly used variables for measuring the level of BIM adoption and implementation: BIM adoption rate, depth of implementation, level of proficiency, and years using BIM. </h4>
+				<h4>There are three types of slim BIM charts: diamond, triangle, and ball chart. 
+				<li>The diamond chart uses all four variables. 
+				<li>The triangle chart uses three variables except for BIM adoption rate. 
+				<li>The ball chart uses only two variables: BIM adoption rate and either one of depth of BIM implementation or level of proficiency.</h4>
+				<h4>The areas of a diamond chart, a triangle chart, and a ball chart are called D-value, T-value, and B-value, respectively. 
+				<br><br>For more details on slim BIM charts, 
+				<br>please read "<a href="#">Slim BIM Charts for Rapdily Visualizing and Quantifying Levels of BIM Adoption and Implementation</a>" paper published on Month. 2015.</h4>
+				<p></p>
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+		                <a href="<?php echo URL::to("slimbim#chart"); ?>" class="btn btn-primary btn-xl">Slim BIM charts</a>
+				<a href="<?php echo URL::to("slimbimsurvey"); ?>" class="btn btn-primary btn-xl">Join our slim BIM survey</a>
+		            </div>
+	        </div>
+	</section>
+
+	<section class="bg-primary" id="chart">
+		<div class="container">
+			<div class="row">
+				<div class="text-center">
+					<h1 class="section-heading">slim BIM Chart</h1>
+					<hr class="light">
+				</div>
+				<div class="col-lg-4">
+				<h4 class="section-heading">diamond chart</h4>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<!-- <div class="panel-body"><canvas height="400px" id="canvas" width="400px"></canvas></div> -->
+					</div>
+				</div>
+				<div class="text-center">
+					<a href="#" class="btn btn-default btn-xl">Refresh the chart</a>
+					<br>
+					<hr class="light">
+					<a href="#survey" class="btn btn-default btn-xl">I'd like to add my view to the slim BIM chart</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	
+	
+	<section id="survey">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h1 class="section-heading">slim BIM Survey</h1>
+					<hr class="primary">
+					<h3> Every year, we are going to report the BIG BIM report. By participating slim BIM survey, you will get the BIG BIM report early than anybody else!</h3>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+		<aside class="bg-dark">
+			<div class="container text-center">
+				<div class="call-to-action">
+					<h2>Contribute to the staus of your country's BIM adoption and implemenation!</h2>
+					<a href="<?php echo URL::to('slimbimsurvey'); ?>" class="btn btn-default btn-xl wow tada">Join our slim BIM survey</a>
+				</div>
+			</div>
+		</aside>
+		</div>
+	</section>
+		
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.slimbim', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

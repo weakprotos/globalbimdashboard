@@ -1,0 +1,92 @@
+<?php $__env->startSection('title'); ?>
+Organizations | Global BIM Dashboard
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script-front'); ?>
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('script-rear'); ?>
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
+
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('page-wrapper'); ?>
+
+
+	<div id="page-wrapper">
+
+
+<div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">BIM Guides</h1>
+			<p> <a href="<?php echo URL::route('guides.create'); ?>" type="button" class="btn btn-outline btn-primary btn-lg btn-block">Add Your BIM Guide</a></p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+
+
+<?php foreach(array_chunk($guides->all(),2) as $row): ?>
+<div class="row">
+<?php foreach($row as $value): ?>
+<div class="col-lg-6 col-md-12">
+
+			<div class="panel panel-warning">
+			<div class="panel-heading">
+
+                        	<?php echo $value->name; ?>
+
+
+ 			</div>
+			<div class="panel-body">
+				<?php echo $value->introduction; ?>
+
+
+			</div>
+			<div class="panel-footer">
+				URL: <a href="<?php echo URL::to($value->url); ?>"><?php echo $value->url; ?></a>
+			</div>
+		
+		</div>
+
+</div>
+<?php endforeach; ?>
+</div>
+<?php endforeach; ?>
+
+<?php echo $guides->links(); ?>
+
+</div>
+</div>
+</div>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.sb-admin-2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
